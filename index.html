@@ -1,178 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayushi Sorig Gatsal Clinic | Holistic Healthcare</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>༄༅། །ཨཱཡུཥཱི་གསོ་རིགས་དགའ་འཚལ།། AYUSHI SORIG GATSAL CLINIC</title>
+
+<meta name="description" content="AYUSHI SORIG GATSAL CLINIC – Trusted holistic healthcare rooted in Tibetan medicine, offering compassionate, personalized and ethical treatment.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#2f8f9d">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root
+body.dark{
+  --primary:#7dd3d9;
+  --accent:#0f172a;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  background:#020617;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:clamp(15px,1vw,17px)}
+body{
+  font-family:'Inter',sans-serif;
+  color:var(--text);
+  background:var(--white);
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+
+.container{max-width:1200px;margin:auto;padding:0 20px}
+
+/* HEADER */
+header<div style="display:flex;gap:8px">
+  <button class="btn-outline" onclick="setLang('en')">EN</button>
+  <button class="btn-outline" onclick="setLang('bo')">བོད</button>
+</div>
+{
+  position:sticky;top:0;z-index:1000;
+  background:#ffffffee;
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #e5e7eb;
+}
+<button class="menu-btn" onclick="toggleDark()">🌙</button>
+{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;
+}
+nav h1{font-size:1rem;font-weight:700;color:var(--primary)}
+nav ul{display:flex;gap:22px;list-style:none}
+nav li{font-weight:500;color:#374151}
+
+.menu-btn{
+  display:none;
+  font-size:1.6rem;
+  background:none;border:none;cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(to right,var(--accent),#ffffff);
+  padding:80px 0;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
+  align-items:center;
+}
+.hero h2{font-size:2.3rem;line-height:1.2;margin-bottom:15px}
+.hero p{color:var(--muted);margin-bottom:25px}
+
+.hero-actions{display:flex;gap:15px;flex-wrap:wrap}
+
+.btn-outline{
+  padding:10px 18px;
+  border-radius:30px;
+  border:2px solid var(--primary);
+  color:var(--primary);
+  font-weight:600;
+}
+
+.hero-card{
+  background:white;
+  border-radius:var(--radius);
+  padding:30px;
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+/* SECTIONS */
+section{padding:70px 0;animation:fadeUp .6s ease both}
+section h3{text-align:center;font-size:1.8rem;margin-bottom:10px}
+.subtitle{text-align:center;color:var(--muted);margin-bottom:45px}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:none}
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  gap:25px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+
+.card, .testimonial{
+  background:white;
+  border-radius:var(--radius);
+  padding:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,.06);
+  transition:.3s ease;
+}
+.card:hover,.testimonial:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.card h4{margin-bottom:10px;color:var(--primary)}
+.card p{color:var(--muted);font-size:.95rem}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--accent)}
+.stars{color:#fbbf24;margin-bottom:6px}
+.testimonial span{font-size:.85rem;color:var(--muted)}
+
+/* TABLE */
+.table-wrapper{overflow-x:auto}
+table{
+  width:100%;border-collapse:collapse;
+  min-width:500px;
+}
+th,td{
+  padding:12px;
+  border-bottom:1px solid #e5e7eb;
+  text-align:left;
+}
+th{background:var(--accent)}
+
+/* CONTACT */
+.contact-grid{
+  display:grid;
+  gap:40px;
+  grid-template-columns:1fr 1fr;
+}
+.phone-link{color:var(--primary);font-weight:600}
+.closed{color:#d9534f;font-weight:600}
+iframe{
+  width:100%;
+  height:320px;
+  border:0;
+  border-radius:var(--radius);
+}
+
+/* FOOTER */
+footer{
+  background:#0f172a;
+  color:#e5e7eb;
+  padding:40px 0;
+}
+footer p{text-align:center;font-size:.9rem}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;right:20px;
+  background:#25d366;
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:600;
+  box-shadow:0 10px 20px rgba(0,0,0,.2)
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-grid,.contact-grid{grid-template-columns:1fr}
+  nav ul{
+    display:none;
+    position:absolute;
+    top:72px;right:20px;
+    background:white;
+    flex-direction:column;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15)
+  }
+  nav ul.show{display:flex}
+  .menu-btn{display:block}
+}
+</style>
 </head>
+
 <body>
 
-    <header id="header">
-        <div class="container nav-container">
-            <div class="logo">
-                Ayushi Sorig Gatsal             ༄༅། །ཨཱཡུཥཱི་གསོ་རིགས་དགའ་འཚལ།།
-            </div>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#appointment" class="btn-nav">Book Appointment</a></li>
-                </ul>
-                <div class="burger" id="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </nav>
-        </div>
-    </header>
+<header>
+  <div class="container">
+    <nav>
+      <h1>AYUSHI SORIG GATSAL CLINIC</h1>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#holidays">Holidays</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1>Healing with <span class="highlight">Compassion</span> & Expertise</h1>
-            <p>Welcome to Ayushi Sorig Gatsal Clinic, where we restore balance and health through personalised traditional Tibetan Medicine with holistic, experience-based care.</p>
-            <div class="hero-btns">
-                <a href="#appointment" class="btn btn-primary">Book Consultation</a>
-                <a href="#services" class="btn btn-secondary">View Services</a>
-            </div>
-            
-            <div class="trust-badges">
-                <div class="badge"><i class="fas fa-user-md"></i> Expert Doctors</div>
-                <div class="badge"><i class="fas fa-star"></i> 5-Star Care</div>
-                <div class="badge"><i class="fas fa-clock"></i> Minimal Wait Time</div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h2>Compassionate, Holistic & Patient-Centric Care</h2>
+      <p>Trusted healthcare rooted in holistic healing, focused on long-term wellness, balance, and personalized treatment.</p>
+    <div class="hero-actions">
+      <a href="#appointment" class="btn-outline">Book Appointment</a>
+      <a href="#testimonials" class="btn-outline">Patient Reviews</a>
+    </div>
+</div>
+    <div class="hero-card">
+      <img loading="lazy" src="https://lh3.googleusercontent.com/p/AF1QipNkqxEd1kV65Z0d6lDPaz2rqvrzWADdOzpbaFnF=s1360-w1360-h1020-rw" alt="Clinic Interior" style="width:100%;border-radius:12px;margin-bottom:15px">
+      <p><strong>Trusted by local patients</strong><br>
+      Personalized consultations<br>
+      Clean & calm clinic environment</p>
+    </div>
+  </div>
+</section>
 
-    <section id="about" class="section">
-        <div class="container about-wrapper">
-            <div class="about-img">
-                
-                <img src="https://lh3.googleusercontent.com/p/AF1QipNkqxEd1kV65Z0d6lDPaz2rqvrzWADdOzpbaFnF=s1360-w1360-h1020-rw" alt="Clinic Interior">
-            </div>
-            <div class="about-text">
-                <h2>About Our Clinic</h2>
-                <p class="lead">Dedicated to restoring balance and health.</p>
-                <p>At <strong>Ayushi Sorig Gatsal Clinic</strong>, we believe healthcare is more than just treating symptoms; it is about treating the person. With over 10 years of experience, our team is certified in traditional Tibetan holistic wellness therapies. We provide holistic treatment based on Sowa Rigpa (Traditional Tibetan Medicine), using diet guidance, lifestyle advice, herbal medicines, and therapies like medicinal baths and massage to restore body balance and support conditions such as arthritis, diabetes, and digestive disorders.</p>
-                <ul class="feature-list">
-                    <li><i class="fas fa-check-circle"></i> Certified Medical Professionals</li>
-                    <li><i class="fas fa-check-circle"></i> Patient Centric Approach</li>
-                    <li><i class="fas fa-check-circle"></i> State of the art Hygiene Standards</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h3>About the Clinic</h3>
+    <p class="subtitle">Care that respects tradition, science, and patient well-being</p>
+    <div class="grid">
+      <div class="card"><h4>Our Mission</h4><p>Ethical, affordable holistic healthcare focused on balance and quality of life.</p></div>
+      <div class="card"><h4>Our Values</h4><p>Compassion, transparency, and personalized patient care.</p></div>
+      <div class="card"><h4>Professional Practice</h4><p>Safe, evidence-based holistic medicine with traditional wisdom.</p></div>
+    </div>
+  </div>
+</section>
 
-    <section id="services" class="section bg-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Services</h2>
-                <p>Comprehensive care tailored to your needs.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-stethoscope"></i></div>
-                    <h3>General Consultation</h3>
-                    <p>Primary care for all ages, including diagnosis, treatment, and preventive advice.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-spa"></i></div>
-                    <h3>Sowa Rigpa / Wellness</h3>
-                    <p>Traditional Tibetan healing therapies focused on balancing the body's energies.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-vial"></i></div>
-                    <h3>Diagnostics</h3>
-                    <p>Diagnosis follows traditional Sowa-Rigpa methods, identifying imbalances in Wind, Bile, and Phlegm through careful observation, pulse reading, and patient consultation. This includes examining the tongue and urine, along with overall body constitution and traditional astrological insights..</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-baby"></i></div>
-                    <h3>Pediatric Care</h3>
-                    <p>Gentle and specialized care for infants, children, and adolescents.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <h3>Our Services</h3>
+    <p class="subtitle">Clear, simple and patient-friendly treatments</p>
+    <div class="grid">
+      <div class="card"><h4>Holistic Consultation</h4><p>Root-cause focused evaluation.</p></div>
+      <div class="card"><h4>Chronic Care</h4><p>Gentle long-term health support.</p></div>
+      <div class="card"><h4>Diet & Lifestyle</h4><p>Simple, practical guidance.</p></div>
+      <div class="card"><h4>Preventive Care</h4><p>Immunity and wellness focus.</p></div>
+    </div>
+  </div>
+</section>
 
-    <section id="appointment" class="section">
-        <div class="container">
-            <div class="appointment-wrapper">
-                <div class="form-info">
-                    <h2>Call us or whatsapp us</h2>
-                    <p>To book an appointment.</p>
-                    <div class="info-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <span>+91 87550 39872</span>
-                    </div>
-                    <div class="info-item">
-                       <i class="fab fa-whatsapp"></i>
-                        <span> <a href="https://wa.me/91875503987" </a></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <h3>Patient Testimonials</h3>
+    <p class="subtitle">Reviews from Google Maps</p>
+    <div class="grid">
+      <div class="testimonial"><div class="stars">★★★★★</div><p>Very kind and patient doctor. Effective treatment.</p></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p>Professional, calm and knowledgeable.</p></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p>Peaceful clinic and holistic approach.</p></div>
+    </div>
+  </div>
+</section>
 
-    <section id="contact" class="section bg-dark">
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <h3>Ayushi Sorig Gatsal Clinic</h3>
-                <p>Providing quality healthcare with a personal touch.</p>
-                <div class="contact-details">
-                    <p><i class="fas fa-map-marker-alt"></i> Buddha Temple, Pal Dechen chokorling Kagyu Monastery, Clement Town, Dehradun, Uttarakhand 248002</p>
-                    <p><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 6:00 PM</p>
-                    <p><i class="fas fa-calendar-times"></i> Every Second and Fourth Saturdays: Closed</p>
-                </div>
-                <div class="socials">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2266.037989460282!2d77.9986363!3d30.260662299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39092bbd602bb0bd%3A0xdb6d48e13cef9b27!2sAYUSHI%20SORIG%20GATSAL%20CLINIC!5e1!3m2!1sen!2sin!4v1770267141201!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2026 Ayushi Sorig Gatsal Clinic. All rights reserved.</p>
-        </div>
-    </section>
+<!-- HOLIDAYS -->
+<section id="holidays">
+  <div class="container">
+    <h3>Clinic Holidays</h3>
+    <p class="subtitle">From April 2024 – March 2025</p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+        <tr><th>Holiday</th><th>Date</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+<script>
+fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vR8qzrs2BCNc3Oubvk1dZSSViJmjCrQ9w1fF8YCkIIbur9LRpRAunH4b6ZLQj1RfE4K56oqbzHaWl5k/pub?gid=0&single=true&output=csv")
+.then(res=>res.text())
+.then(csv=>{
+  const rows = csv.split("\n").slice(1);
+  const tbody = document.querySelector("#holidayTable tbody");
+  rows.forEach(row=>{
+    const [holiday,date] = row.split(",");
+    if(holiday && date){
+      tbody.innerHTML += `<tr><td>${holiday}</td><td>${date}</td></tr>`;
+    }
+  });
+});
+</script>
 
-    <a href="https://wa.me/918755039872" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
-    <script src="script.js"></script>
+</section>
+
+<section id="appointment">
+  <div class="container">
+    <h3>Book an Appointment</h3>
+    <p class="subtitle">Simple, secure & convenient</p>
+
+    <div class="hero-card">
+      <iframe 
+        src="<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeXU69Ez4qdOTnlQTVWDpU_I4ASU4gAa5pQBfDG9u_64d5VSA/viewform?embedded=true" width="640" height="1675" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>"
+        height="620"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h3>Contact & Location</h3>
+    <p class="subtitle">Easy to reach. Easy to care.</p>
+    <div class="contact-grid">
+      <div>
+        <p><strong>Address:</strong> Buddha Temple, Clement Town, Dehradun</p>
+        <p><strong>Call:</strong> <a class="phone-link" href="tel:+918755039872">8755039872</a></p>
+        <p><strong>Hours:</strong> 9 AM – 6 PM</p>
+        <p><strong>2nd & 4th Saturdays:</strong> <span class="closed">Closed</span></p>
+      </div>
+      <iframe loading="lazy" src="https://www.google.com/maps?q=AYUSHI%20SORIG%20GATSAL%20CLINIC&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© AYUSHI SORIG GATSAL CLINIC. All rights reserved.</p>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/+918755039872" target="_blank">WhatsApp</a>
+
+<script>
+function toggleMenu(){
+  document.querySelector("nav ul").classList.toggle("show");
+}
+</script>
+<script>
+function toggleDark(){
+  document.body.classList.toggle("dark");
+  localStorage.setItem(
+    "darkMode",
+    document.body.classList.contains("dark")
+  );
+}
+
+if(localStorage.getItem("darkMode")==="true"){
+  document.body.classList.add("dark");
+}
+</script>
+<script>
+function setLang(lang){
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.innerText = el.dataset[lang];
+  });
+  localStorage.setItem("lang", lang);
+}
+
+const savedLang = localStorage.getItem("lang");
+if(savedLang) setLang(savedLang);
+</script>
+
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
